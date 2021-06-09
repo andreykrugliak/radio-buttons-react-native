@@ -123,6 +123,7 @@ class RadioButtonRN extends React.Component {
             {
                 data.map((item, index) => {
                     return (
+                        <>
                         <TouchableOpacity
                             key={index}
                             style={[ box ? styles.productBox : styles.productBoxLess, 
@@ -175,12 +176,14 @@ class RadioButtonRN extends React.Component {
                                     {item.label}
                                 </Text>
                             </View>
-                            {item.description ?  <Text style={[{
+                           
+                        </TouchableOpacity>
+                        {item.description ?  <Text style={[{
                                     color: textColor
                                 }, textDecriptionStyle]}>
                                     {item.description}
                                 </Text> : null}
-                        </TouchableOpacity>
+                                </>
                     )
                 })
             }
@@ -205,12 +208,12 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     leftProductBox: {
-        flex: 1,
+        // flex: 1,
         alignItems: 'center',
         justifyContent: 'center'
     },
     centerProductBox: {
-        flex: 6,
+        // flex: 6,
         justifyContent: 'center',
         alignItems: 'flex-start',
         paddingHorizontal:4

@@ -126,11 +126,13 @@ class RadioButtonRN extends React.Component {
                         <>
                         <TouchableOpacity
                             key={index}
+                            disabled={!!item?.disabled}
                             style={[ box ? styles.productBox : styles.productBoxLess, 
                                 box && {
                                     backgroundColor: activeIndex === index ? boxActiveBgColor : boxDeactiveBgColor,
                                     borderColor: activeIndex === index ? activeColor : deactiveColor,
-                                }
+                                },
+                                !!item?.disabled ? disabledStyle : null,
                             , boxStyle]}
                             activeOpacity={0.9}
                             onPress={() => this._changeRadio(item, index)}
